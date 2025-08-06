@@ -4,47 +4,54 @@
   <meta charset="UTF-8" />
   <title>Lizard Button</title>
   <style>
-     body {
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: #f0f0f0;
-    }
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px; /* Helps with mobile spacing */
+  background: #f0f0f0;
+}
 
-    button {
-      background-color: rgb(219, 219, 219);
-      border: none;
-      padding: 20px 40px;
-      font-size: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-      transition: all 0.1s ease-in-out;
-      transform: translateY(0);
-    }
+button {
+  background-color: rgb(219, 219, 219);
+  border: none;
+  padding: 20px 40px;
+  font-size: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  transform: translateY(0);
+  width: 100%;
+  max-width: 300px; /* Makes it responsive */
+}
 
-    button:active {
-      transform: translateY(4px) scale(0.97);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
+button:active {
+  transform: translateY(4px) scale(0.97);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-    #counter {
-      margin-top: 20px;
-      font-size: 1.5rem;
-    }
+#counter {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
 
-     @media (max-width: 500px) {
-      button {
-        font-size: 1.5rem;
-        padding: 1em 1.2em;
-      }
-      #counter {
-        font-size: 1rem;
-      }
-    }
+/* Optional media query if you want to tweak font or padding smaller */
+@media (max-width: 500px) {
+  button {
+    font-size: 1.5rem;
+    padding: 16px 24px;
+  }
+
+  #counter {
+    font-size: 1.2rem;
+  }
+}
+
   </style>
 </head>
 <body>
