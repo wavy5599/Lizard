@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lizard Button</title>
+  <style>
+     body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+
+    button {
+      background-color: rgb(219, 219, 219);
+      border: none;
+      padding: 20px 40px;
+      font-size: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+      transform: translateY(0);
+    }
+
+    button:active {
+      transform: translateY(4px) scale(0.97);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #counter {
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="lizardBtn">🦎</button>
+  <div id="counter">Pressed: 0 times</div>
+  <audio id="lizardSound" src="/lizard-button.mp3" preload="auto"></audio>
+
+  <script>
+    const button = document.getElementById('lizardBtn');
+    const counter = document.getElementById('counter');
+    const audio = document.getElementById('lizardSound');
+
+    let pressCount = 0;
+
+    button.addEventListener('click', () => {
+      pressCount++;
+      counter.textContent = `Pressed: ${pressCount} time${pressCount !== 1 ? 's' : ''}`;
+      audio.currentTime = 0; // restart sound if it’s still playing
+      audio.play();
+    });
+  </script>
+
+</body>
+</html>
